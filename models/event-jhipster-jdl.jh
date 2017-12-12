@@ -1,0 +1,17 @@
+entity Event {
+    name String    
+    games Game[]
+}
+
+entity Participant {
+	type ParticipantType
+    userId Long
+}
+
+enum ParticipantType {
+    PLAYER, GAMEMASTER
+}
+
+relationship OneToMany {
+	Event{participants} to Participant
+}

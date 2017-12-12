@@ -1,0 +1,37 @@
+entity Story {
+    name String required
+    gameId Long required
+}
+
+entity Quest {
+    type QuestType
+    chain Boolean
+    name String required
+	specific String
+}
+
+enum QuestType {
+	KILL, COMBO, DELIVERY, GATHER, ESCORT, SYNTAX, HYBRID
+}
+
+relationship OneToMany {
+	Story{quests} to Quest
+}
+relationship OneToMany {
+	Quest{chains} to Quest
+}
+
+entity Character {
+	type CharacterType required
+	playerId String
+	name String required
+}
+
+enum CharacterType {
+	PLAYER, NON_PLAYER
+}
+
+relationship ManyToMany {
+	CharacterQuest to Character
+	CharacterQuest to Quest
+}

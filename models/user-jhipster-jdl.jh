@@ -1,0 +1,25 @@
+entity User {
+	id Long
+    // AUTH
+	login String
+	password String
+	activated Boolean
+    // INFOS
+	firstName String
+	password String
+	lastName String
+	email String
+	langKey Boolean
+	imageUrl Boolean
+    // OAUTH
+	activationKey String
+	resetKey String    
+	resetDate Instant    
+}
+entity Authority {
+	name String
+}
+
+relationship OneToOne {
+	User{authorities} to Authority
+}

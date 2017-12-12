@@ -1,0 +1,10 @@
+relationship ManyToOne {
+	Participant to User
+    Player to Participant
+	Character to Player   
+}
+
+relationship ManyToMany {
+	Game to Event
+	Story to Game
+}

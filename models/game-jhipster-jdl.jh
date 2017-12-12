@@ -1,60 +1,35 @@
-
-// EVENT
-
-entity Player {
-	type PlayerType required
-    name String required
-}
-
-enum PlayerType {
-    PLAYER, GAMEMASTER
-}
-
-entity Event {
-    name String required    
-    games Game[]
-}
-
-relationship OneToMany {
-	Event{players} to Player
-}
-
-// GAME
-
 entity Game {
     name String required
+    genre GenreType
+    style StyleType
 }
 
-// QUEST
-
-entity Character {
-	playable Boolean required
-	playerId String
-	name String required
+enum GenreType {
+    FANTASY, MODERN, CYBERPUNK
 }
 
-entity Quest {
+enum StyleType {
+    THEATRE, BATTLE
+}
+
+entity Rule {
     name String required
 }
 
 relationship OneToMany {
-	Game{quests} to Quest
-}
-relationship OneToMany {
-	Quest{characters} to Character
+	Game{rules} to Rule
 }
 
-// MAP
 
-entity Map {
-
+entity Combat {
+	type CombatType
+    specificRules String
 }
 
-entity Tile {
-
+enum CombatType {
+    POINT, LIMB_LOSS, NO_TOUCH, TURN_BASED, PRACTICAL, RANGED, NON_COMBAT, HYBRIDS
 }
 
 relationship OneToMany {
-	Map{tiles} to Tile
+	Game{combats} to Combat
 }
-
