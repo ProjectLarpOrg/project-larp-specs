@@ -1,0 +1,60 @@
+
+// EVENT
+
+entity Player {
+	type PlayerType required
+    name String required
+}
+
+enum PlayerType {
+    PLAYER, GAMEMASTER
+}
+
+entity Event {
+    name String required    
+    games Game[]
+}
+
+relationship OneToMany {
+	Event{players} to Player
+}
+
+// GAME
+
+entity Game {
+    name String required
+}
+
+// QUEST
+
+entity Character {
+	playable Boolean required
+	playerId String
+	name String required
+}
+
+entity Quest {
+    name String required
+}
+
+relationship OneToMany {
+	Game{quests} to Quest
+}
+relationship OneToMany {
+	Quest{characters} to Character
+}
+
+// MAP
+
+entity Map {
+
+}
+
+entity Tile {
+
+}
+
+relationship OneToMany {
+	Map{tiles} to Tile
+}
+
