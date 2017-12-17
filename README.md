@@ -23,6 +23,8 @@ TODO
 
 ## Models
 
+Ces modèles sont fait avec [jdl-studio](https://start.jhipster.tech/jdl-studio/) (outil en ligne).
+
 ### General
 
 ![ScreenShot](models/all-jhipster-jdl.png)
