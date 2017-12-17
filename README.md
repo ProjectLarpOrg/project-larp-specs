@@ -30,8 +30,11 @@ TODO
 ### All
 
 ![ScreenShot](models/scenario-jhipster-jdl.png)
+
 ![ScreenShot](models/game-jhipster-jdl.png)
+
 ![ScreenShot](models/event-jhipster-jdl.png)
+
 ![ScreenShot](models/user-jhipster-jdl.png)
 
 ---
