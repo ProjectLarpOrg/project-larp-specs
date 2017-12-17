@@ -23,10 +23,12 @@ TODO
 
 ## Models
 
-General
+### General
+
 ![ScreenShot](models/all-jhipster-jdl.png)
 
-All
+### All
+
 ![ScreenShot](models/scenario-jhipster-jdl.png)
 ![ScreenShot](models/game-jhipster-jdl.png)
 ![ScreenShot](models/event-jhipster-jdl.png)
